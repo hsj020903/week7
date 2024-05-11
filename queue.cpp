@@ -1,3 +1,18 @@
 #include "queue.h"
 
-// TODO: Queue 클래스 구현 작성
+void Queue::push(int value){
+    LinkedList::insert(size_, value);
+}
+int Queue::peek(){
+    return LinkedList::get(0);
+
+}
+int Queue::pop(){
+    int val = LinkedList::get(0);
+    LinkedList::remove(0);
+    return val;
+}
+
+void Queue::operator+=(int value){
+    LinkedList::insert(size_, value);
+}
